@@ -7,15 +7,6 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="google-site-verification" content="yE1jgc5Tv8iV5DSEVyofU-gRWHhi7jbA3b1Q2qvS-gI" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.1&appId=3074485109285192&autoLogAppEvents=1&colorscheme=light&order_by=time";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
     <meta name="description" content="大家好，我是 Cindy，發現自己最近記憶力真的不好，以前看過的東西還是不記得，最近嚴重到 3 天前的事情也忘光，所以想盡可能做紀錄，於是這篇文章就誕生了ＱＱ 又過了一陣子發現這文章沒寫完，而且還有點混亂 XDD，趁過年的時候做了個整理，這篇文章最大的目的是如果我又忘記了可以直接翻來看，如果我有寫錯也歡迎大家留言告訴我唷。                什麼是 Cross SiteCross Si">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cross-Site Request Forgery (CSRF)">
@@ -64,15 +55,6 @@ fjs.parentNode.insertBefore(js, fjs);
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
-    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.1&appId=3074485109285192&autoLogAppEvents=1&colorscheme=light&order_by=time";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
     
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
@@ -224,10 +206,11 @@ fjs.parentNode.insertBefore(js, fjs);
 <script type="text/javascript" src="//js1.bloggerads.net/ShowBanner.aspx?blogid=20201206000001" async></script>
 
 
-<section id="comments">
-<div class="fb-comments" data-href="
-https://cindyliu923.com/2022/11/20/CSRF/" data-numposts="10"></div>
-</section>
+<div class="blog-post-comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+  </div>
+</div>
 
 
 
@@ -350,5 +333,18 @@ https://cindyliu923.com/2022/11/20/CSRF/" data-numposts="10"></div>
         ga('send', 'pageview');
     </script>
 
+
+    <!-- Disqus Comments -->
+    <script type="text/javascript">
+        var disqus_shortname = 'cindyliu';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
 
 

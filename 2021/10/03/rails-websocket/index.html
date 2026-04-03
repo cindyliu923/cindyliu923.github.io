@@ -7,15 +7,6 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="google-site-verification" content="yE1jgc5Tv8iV5DSEVyofU-gRWHhi7jbA3b1Q2qvS-gI" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.1&appId=3074485109285192&autoLogAppEvents=1&colorscheme=light&order_by=time";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
     <meta name="description" content="大家好，我是 Cindy，最近有做了 Rails Websocket 的功能，想說做個紀錄，以下文章重點會放在實作面，雖然是這麼說，但還是查一下什麼是 Websocket 好像比較正確。 WebsocketWebSocket 是一種網路傳輸協定，簡單講就是早期網路通訊只考慮到由 client 端發送請求給 server 端，這種單向的傳輸，當有雙向傳輸的需求(ex: 推播功能)實作上會變得比較複雜">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Rails Websocket 後端實作紀錄">
@@ -68,15 +59,6 @@ fjs.parentNode.insertBefore(js, fjs);
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
-    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.1&appId=3074485109285192&autoLogAppEvents=1&colorscheme=light&order_by=time";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
     
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
@@ -251,10 +233,11 @@ fjs.parentNode.insertBefore(js, fjs);
 <script type="text/javascript" src="//js1.bloggerads.net/ShowBanner.aspx?blogid=20201206000001" async></script>
 
 
-<section id="comments">
-<div class="fb-comments" data-href="
-https://cindyliu923.com/2021/10/03/rails-websocket/" data-numposts="10"></div>
-</section>
+<div class="blog-post-comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+  </div>
+</div>
 
 
 
@@ -377,5 +360,18 @@ https://cindyliu923.com/2021/10/03/rails-websocket/" data-numposts="10"></div>
         ga('send', 'pageview');
     </script>
 
+
+    <!-- Disqus Comments -->
+    <script type="text/javascript">
+        var disqus_shortname = 'cindyliu';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
 
 

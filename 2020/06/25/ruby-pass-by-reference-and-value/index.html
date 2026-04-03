@@ -7,15 +7,6 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="google-site-verification" content="yE1jgc5Tv8iV5DSEVyofU-gRWHhi7jbA3b1Q2qvS-gI" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.1&appId=3074485109285192&autoLogAppEvents=1&colorscheme=light&order_by=time";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
     <meta name="description" content="大家好，我是 Cindy，幾天前公司早上例會的時候，討論了關於 Ruby 的指標，這次的討論讓我明白原來 Ruby 是用 rvalue 來實作，是 pass by value 但如果說超過特定長度的話這個 value 會有一個在 C 語言中實做的參考，讓我想到去年我在公司的官網也有寫過一篇關於這件事情的文章，所以決定將這篇文章也分享在我自己的部落格裡，以下是原文。  大家好，今天要來跟大家說一個如">
 <meta property="og:type" content="article">
 <meta property="og:title" content="新手不小心會踩到的坑：我真的複製出物件了嗎？">
@@ -64,15 +55,6 @@ fjs.parentNode.insertBefore(js, fjs);
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
-    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.1&appId=3074485109285192&autoLogAppEvents=1&colorscheme=light&order_by=time";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
     
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
@@ -243,10 +225,11 @@ fjs.parentNode.insertBefore(js, fjs);
 <script type="text/javascript" src="//js1.bloggerads.net/ShowBanner.aspx?blogid=20201206000001" async></script>
 
 
-<section id="comments">
-<div class="fb-comments" data-href="
-https://cindyliu923.com/2020/06/25/ruby-pass-by-reference-and-value/" data-numposts="10"></div>
-</section>
+<div class="blog-post-comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+  </div>
+</div>
 
 
 
@@ -369,5 +352,18 @@ https://cindyliu923.com/2020/06/25/ruby-pass-by-reference-and-value/" data-numpo
         ga('send', 'pageview');
     </script>
 
+
+    <!-- Disqus Comments -->
+    <script type="text/javascript">
+        var disqus_shortname = 'cindyliu';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
 
 

@@ -7,15 +7,6 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="google-site-verification" content="yE1jgc5Tv8iV5DSEVyofU-gRWHhi7jbA3b1Q2qvS-gI" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.1&appId=3074485109285192&autoLogAppEvents=1&colorscheme=light&order_by=time";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
     <meta name="description" content="大家好，我是 Cindy，前一陣子因爲工作夥伴們遇到的問題，而研究了一下 Docker 的 multi-stage build，故事是這樣的： 小夥伴們開發了一個 gem，push 到客戶的 GitLab，遇到了兩次 pipelines 失敗的情況：  第一次，在 GitLab runner 開始進行 test stage 的 bundle install 的時候，因為沒有 pull GitLab">
 <meta property="og:type" content="article">
 <meta property="og:title" content="什麼是 Docker multi stage?">
@@ -68,15 +59,6 @@ fjs.parentNode.insertBefore(js, fjs);
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
-    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.1&appId=3074485109285192&autoLogAppEvents=1&colorscheme=light&order_by=time";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
     
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
@@ -244,10 +226,11 @@ fjs.parentNode.insertBefore(js, fjs);
 <script type="text/javascript" src="//js1.bloggerads.net/ShowBanner.aspx?blogid=20201206000001" async></script>
 
 
-<section id="comments">
-<div class="fb-comments" data-href="
-https://cindyliu923.com/2021/05/23/What-is-docker-multi-stage/" data-numposts="10"></div>
-</section>
+<div class="blog-post-comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+  </div>
+</div>
 
 
 
@@ -370,5 +353,18 @@ https://cindyliu923.com/2021/05/23/What-is-docker-multi-stage/" data-numposts="1
         ga('send', 'pageview');
     </script>
 
+
+    <!-- Disqus Comments -->
+    <script type="text/javascript">
+        var disqus_shortname = 'cindyliu';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
 
 
