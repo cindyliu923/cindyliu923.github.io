@@ -7,16 +7,24 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="google-site-verification" content="yE1jgc5Tv8iV5DSEVyofU-gRWHhi7jbA3b1Q2qvS-gI" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="fb:app_id" content="3074485109285192" />
-    <meta name="description" content="Hi, 大家好, 我是 Cindy Liu, Rails Developer, 努力學習程式中, 這是一個學習筆記部落格。下面是一個小畫板，大家可以畫圈圈叉叉!？             🐤顏色:          🐤大小:          橡皮擦                 window.addEventListener(&#39;DOMContentLoaded&#39;, () &#x3D;&gt; {">
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.1&appId=3074485109285192&autoLogAppEvents=1&colorscheme=light&order_by=time";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+    <meta name="description" content="Hi, 大家好, 我是 Cindy Liu, Rails Developer, 努力學習程式中, 這是一個學習筆記部落格。    🎨 小畫家   🐤 小雞格鬥   🐔 打地鼠   🥚 接雞蛋               🐤 顏色          大小          橡皮擦     清除             🐤 vs 🐤&amp;ensp;鍵盤：AD 移動&amp;ensp;J 攻擊&amp;ens">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
 <meta property="og:url" content="https://cindyliu923.com/about/index.html">
 <meta property="og:site_name" content="Cindy&#39;s Blog">
-<meta property="og:description" content="Hi, 大家好, 我是 Cindy Liu, Rails Developer, 努力學習程式中, 這是一個學習筆記部落格。下面是一個小畫板，大家可以畫圈圈叉叉!？             🐤顏色:          🐤大小:          橡皮擦                 window.addEventListener(&#39;DOMContentLoaded&#39;, () &#x3D;&gt; {">
+<meta property="og:description" content="Hi, 大家好, 我是 Cindy Liu, Rails Developer, 努力學習程式中, 這是一個學習筆記部落格。    🎨 小畫家   🐤 小雞格鬥   🐔 打地鼠   🥚 接雞蛋               🐤 顏色          大小          橡皮擦     清除             🐤 vs 🐤&amp;ensp;鍵盤：AD 移動&amp;ensp;J 攻擊&amp;ens">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-05-27T16:38:05.000Z">
-<meta property="article:modified_time" content="2020-06-04T16:17:12.061Z">
+<meta property="article:modified_time" content="2026-04-03T11:30:51.974Z">
 <meta property="article:author" content="Cindy Liu">
 <meta property="article:tag" content="Ruby">
 <meta property="article:tag" content="Rails">
@@ -66,12 +74,11 @@
 
 <body>
     <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk/debug.js#xfbml=1&version=v12.0&appId=3074485109285192&autoLogAppEvents=1&colorscheme=light" nonce=Lh92L3Cq></script><script>(function(d, s, id) {
+<script>(function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];
 if (d.getElementById(id)) return;
 js = d.createElement(s); js.id = id;
-js.nonce ="Lh92L3Cq";
-js.src = "https://connect.facebook.net/zh_TW/sdk/debug.js#xfbml=1&version=v12.0&appId=3074485109285192&autoLogAppEvents=1&colorscheme=light&order_by=time";
+js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.1&appId=3074485109285192&autoLogAppEvents=1&colorscheme=light&order_by=time";
 fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
@@ -117,134 +124,700 @@ fjs.parentNode.insertBefore(js, fjs);
   
 
   <div class="content" itemprop="articleBody">
-    <p>Hi, 大家好, 我是 Cindy Liu, Rails Developer, 努力學習程式中, 這是一個學習筆記部落格。<br>下面是一個小畫板，大家可以畫圈圈叉叉!？</p>
-  <div>
-    <div id="cursor-img"></div>
-    <label for="color">🐤顏色:</label>
+    <p>Hi, 大家好, 我是 Cindy Liu, Rails Developer, 努力學習程式中, 這是一個學習筆記部落格。</p>
+<div id="game-switcher">
+  <button class="game-tab active" onclick="switchGame('paint',this)">🎨 小畫家</button>
+  <button class="game-tab" onclick="switchGame('fight',this)">🐤 小雞格鬥</button>
+  <button class="game-tab" onclick="switchGame('whack',this)">🐔 打地鼠</button>
+  <button class="game-tab" onclick="switchGame('catch',this)">🥚 接雞蛋</button>
+</div>
+
+<!-- ===== 小畫家 ===== -->
+<div id="game-paint">
+  <div id="cursor-img"></div>
+  <div class="paint-toolbar">
+    <label for="color">🐤 顏色</label>
     <input id="color" type="color" name="color" value="#ffc600">
-    <label for="size">🐤大小:</label>
+    <label for="size">大小</label>
     <input id="size" type="range" name="size" min="5" max="100" value="50">
-    <button type="button">橡皮擦</button>
-    <canvas id="draw" width="800" height="600"></canvas>
+    <button id="eraser-btn" type="button">橡皮擦</button>
+    <button id="clear-btn" type="button">清除</button>
   </div>
+  <canvas id="draw" height="600"></canvas>
+</div>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const hasTouchEvent = 'ontouchstart' in window ? true : false
-      const downEvent = hasTouchEvent ? 'touchstart' : 'mousedown'
-      const moveEvent = hasTouchEvent ? 'touchmove' : 'mousemove'
-      const upEvent = hasTouchEvent ? 'touchend' : 'mouseup'
-      const canvas = document.querySelector('#draw');
-      const ctx = canvas.getContext('2d');
-      const colorInput = document.querySelector('#color');
-      const sizeInput = document.querySelector('#size');
-      const cursor = document.querySelector('#cursor-img')
-      const eraser = document.querySelector('button')
-      canvas.width = screen.width > 800 ? 800 : screen.width - 0.15*screen.width;
+<!-- ===== 小雞格鬥 ===== -->
+<div id="game-fight" style="display:none">
+  <p style="margin-top:10px">🐤 vs 🐤&ensp;鍵盤：<kbd>A</kbd><kbd>D</kbd> 移動&ensp;<kbd>J</kbd> 攻擊&ensp;|&ensp;AI 自動反擊！</p>
+  <canvas id="fight-canvas"></canvas>
+  <div class="touch-controls">
+    <button class="touch-btn" onpointerdown="fightKeys.a=true" onpointerup="fightKeys.a=false" onpointerleave="fightKeys.a=false">◀</button>
+    <button class="touch-btn atk-btn" onpointerdown="fightKeys.j=true" onpointerup="fightKeys.j=false" onpointerleave="fightKeys.j=false">⚡ 攻擊</button>
+    <button class="touch-btn" onpointerdown="fightKeys.d=true" onpointerup="fightKeys.d=false" onpointerleave="fightKeys.d=false">▶</button>
+  </div>
+  <div class="restart-wrap">
+    <button id="fight-restart" class="restart-btn" style="display:none">再來一局 🐣</button>
+  </div>
+</div>
 
-      const position = (e) => {
-        var x, y;
+<!-- ===== 打地鼠 ===== -->
+<div id="game-whack" style="display:none">
+  <p style="margin-top:10px">🐔 快點冒出來的小雞！計時 30 秒</p>
+  <canvas id="whack-canvas"></canvas>
+  <div class="restart-wrap">
+    <button id="whack-restart" class="restart-btn" style="display:none">再來一局 🐣</button>
+  </div>
+</div>
 
-        if (hasTouchEvent) {
-          x = e.touches[0].pageX - e.target.offsetLeft;
-          y = e.touches[0].pageY - e.target.offsetTop;
-        } else {
-          x = e.offsetX;
-          y = e.offsetY;
-        }
-        return { x: x, y: y };
-      }
+<!-- ===== 接雞蛋 ===== -->
+<div id="game-catch" style="display:none">
+  <p style="margin-top:10px">🥚 接住小雞下的蛋！<kbd>A</kbd><kbd>D</kbd> 或下方按鈕移動籃子</p>
+  <canvas id="catch-canvas"></canvas>
+  <div class="touch-controls">
+    <button class="touch-btn" onpointerdown="catchKeys.a=true" onpointerup="catchKeys.a=false" onpointerleave="catchKeys.a=false">◀</button>
+    <button class="touch-btn" onpointerdown="catchKeys.d=true" onpointerup="catchKeys.d=false" onpointerleave="catchKeys.d=false">▶</button>
+  </div>
+  <div class="restart-wrap">
+    <button id="catch-restart" class="restart-btn" style="display:none">再來一局 🐣</button>
+  </div>
+</div>
 
-      let isEarser = false;
-      let isDrawing = false;
-      let lastX = 0;
-      let lastY = 0;
-      let color = "#ffc600";
-      let size = 30;
+<script>
+/* ═══════════════════════════════════════════
+   Shared globals（var 讓 inline handler 存取得到）
+═══════════════════════════════════════════ */
+var chickenImg = new Image();
+chickenImg.src = '/images/chicken-fat.png';
+var _raf = null;
+var _resizeTimer = null;
+var currentGame = 'paint';
+var fightKeys = {};
+var catchKeys = {};
 
-      const draw = (e) => {
-        if (!hasTouchEvent) {
-          cursor.style.display = 'block';
-        }
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
+function easeInOut(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
 
-        if (!isDrawing) return;
-        var movePosition = position(e);
-        ctx.lineJoin = 'round';
-        ctx.lineCap = 'round';
-        ctx.lineWidth = size;
-        ctx.strokeStyle = color;
-        ctx.beginPath();
-        // start from
-        ctx.moveTo(lastX, lastY);
-        // go to
-        ctx.lineTo(movePosition.x, movePosition.y);
-        ctx.stroke();
-        [lastX, lastY] = [movePosition.x, movePosition.y];
+function switchGame(name, btn) {
+  if (_raf) { cancelAnimationFrame(_raf); _raf = null; }
+  currentGame = name;
+  ['paint','fight','whack','catch'].forEach(g =>
+    document.getElementById('game-'+g).style.display = g === name ? '' : 'none'
+  );
+  document.querySelectorAll('.game-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (name === 'fight') initFight();
+  if (name === 'whack') initWhack();
+  if (name === 'catch') initCatch();
+}
 
-        e.preventDefault();
-      }
+/* ═══════════════════════════════════════════
+   Init
+═══════════════════════════════════════════ */
+window.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('keydown', e => {
+    fightKeys[e.key] = true;
+    catchKeys[e.key] = true;
+    if (['j',' ','a','d','ArrowLeft','ArrowRight'].includes(e.key)) e.preventDefault();
+  });
+  document.addEventListener('keyup', e => {
+    fightKeys[e.key] = false;
+    catchKeys[e.key] = false;
+  });
 
-      const updateColor = (e) => {
-        color = e.target.value;
-      }
+  // 視窗改變時自動重算 canvas 大小（debounce 250ms）
+  window.addEventListener('resize', () => {
+    clearTimeout(_resizeTimer);
+    _resizeTimer = setTimeout(() => {
+      if (currentGame === 'fight') initFight();
+      else if (currentGame === 'whack') initWhack();
+      else if (currentGame === 'catch') initCatch();
+      else if (currentGame === 'paint') resizePaint();
+    }, 250);
+  });
 
-      const updateSize = (e) => {
-        size = e.target.value;
-        cursor.style.backgroundSize = `${e.target.value}%`;
-      }
+  initPaint();
+});
 
-      const hideCursor = () => {
-        cursor.style.display = 'none';
-      }
+/* ═══════════════════════════════════════════
+   🎨 小畫家
+═══════════════════════════════════════════ */
+function resizePaint() {
+  const canvas = document.querySelector('#draw');
+  const newW = Math.min(800, canvas.parentElement.clientWidth);
+  if (newW === canvas.width) return;
+  // 保留畫板內容：先複製到暫存 canvas，再縮放回去
+  const tmp = document.createElement('canvas');
+  tmp.width = canvas.width; tmp.height = canvas.height;
+  tmp.getContext('2d').drawImage(canvas, 0, 0);
+  canvas.width = newW;
+  canvas.getContext('2d').drawImage(tmp, 0, 0, newW, canvas.height);
+}
 
-      const eraserEvent = () => {
-        if (isEarser) {
-          ctx.globalCompositeOperation = 'source-over';
-          cursor.style.backgroundImage = "url('/images/favicon.ico')";
-          eraser.innerHTML = '橡皮擦';
-          isEarser = false;
-        } else {
-          ctx.globalCompositeOperation = 'destination-out';
-          cursor.style.backgroundImage = "url('/images/fried-egg.ico')";
-          eraser.innerHTML = '小雞筆';
-          isEarser = true;
-        }
-      }
+function initPaint() {
+  const hasTouchEvent = 'ontouchstart' in window;
+  const downEvent = hasTouchEvent ? 'touchstart' : 'mousedown';
+  const moveEvent = hasTouchEvent ? 'touchmove'  : 'mousemove';
+  const upEvent   = hasTouchEvent ? 'touchend'   : 'mouseup';
 
-      canvas.addEventListener(downEvent, (e) => {
-        var movePosition = position(e);
-        isDrawing = true;
-        [lastX, lastY] = [movePosition.x, movePosition.y];
+  const canvas    = document.querySelector('#draw');
+  const ctx       = canvas.getContext('2d');
+  const colorIn   = document.querySelector('#color');
+  const sizeIn    = document.querySelector('#size');
+  const cursor    = document.querySelector('#cursor-img');
+  const eraserBtn = document.querySelector('#eraser-btn');
+  const clearBtn  = document.querySelector('#clear-btn');
+  canvas.width = Math.min(800, canvas.parentElement.clientWidth);
+
+  const pos = e => hasTouchEvent
+    ? { x: e.touches[0].pageX - e.target.offsetLeft, y: e.touches[0].pageY - e.target.offsetTop }
+    : { x: e.offsetX, y: e.offsetY };
+
+  let isEraser = false, drawing = false, lx = 0, ly = 0;
+  let color = '#ffc600', size = 30;
+
+  canvas.addEventListener(downEvent, e => { const p = pos(e); drawing = true; [lx,ly] = [p.x,p.y]; });
+  canvas.addEventListener(moveEvent, e => {
+    if (!hasTouchEvent) { cursor.style.display='block'; cursor.style.left=`${e.clientX}px`; cursor.style.top=`${e.clientY}px`; }
+    if (!drawing) return;
+    const p = pos(e);
+    ctx.lineJoin='round'; ctx.lineCap='round'; ctx.lineWidth=size; ctx.strokeStyle=color;
+    ctx.beginPath(); ctx.moveTo(lx,ly); ctx.lineTo(p.x,p.y); ctx.stroke();
+    [lx,ly] = [p.x,p.y];
+    e.preventDefault();
+  });
+  canvas.addEventListener(upEvent, () => drawing = false);
+  canvas.addEventListener('mouseout', () => cursor.style.display = 'none');
+  colorIn.addEventListener('input', e => color = e.target.value);
+  sizeIn.addEventListener('input', e => { size = e.target.value; cursor.style.backgroundSize=`${e.target.value}%`; });
+  eraserBtn.addEventListener('click', () => {
+    isEraser = !isEraser;
+    ctx.globalCompositeOperation = isEraser ? 'destination-out' : 'source-over';
+    cursor.style.backgroundImage = isEraser ? "url('/images/fried-egg.ico')" : "url('/images/favicon.ico')";
+    eraserBtn.textContent = isEraser ? '小雞筆' : '橡皮擦';
+  });
+  clearBtn.addEventListener('click', () => ctx.clearRect(0,0,canvas.width,canvas.height));
+}
+
+/* ═══════════════════════════════════════════
+   🐤 小雞格鬥
+═══════════════════════════════════════════ */
+function initFight() {
+  const canvas = document.getElementById('fight-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width  = Math.min(800, canvas.parentElement.clientWidth);
+  canvas.height = Math.max(280, Math.round(canvas.width * 0.475));
+  const W = canvas.width, H = canvas.height;
+  const GROUND = H - 60, SPD = 3, ATK_RANGE = 90, ATK_DMG = 12, ATK_CD = 700;
+
+  function makeChicken(x, facingRight, isPlayer) {
+    return { x, y: GROUND, w: 80, h: 80, hp: 100, maxHp: 100,
+             facingRight, isPlayer,
+             attackTimer: 0, isAttacking: false, attackFrame: 0, hurtTimer: 0, dead: false };
+  }
+
+  let player, ai, gameOver, winner;
+
+  function reset() {
+    player  = makeChicken(80, true, true);
+    ai      = makeChicken(W - 160, false, false);
+    gameOver = false; winner = '';
+    document.getElementById('fight-restart').style.display = 'none';
+    if (_raf) cancelAnimationFrame(_raf);
+    _raf = requestAnimationFrame(loop);
+  }
+
+  function tryAttack(atk, def, now) {
+    if (now - atk.attackTimer < ATK_CD) return;
+    atk.attackTimer = now; atk.isAttacking = true; atk.attackFrame = 0;
+    if (Math.abs(atk.x - def.x) < ATK_RANGE) {
+      def.hp = Math.max(0, def.hp - ATK_DMG);
+      def.hurtTimer = 12;
+      if (def.hp <= 0) def.dead = true;
+    }
+  }
+
+  function updateAI(now) {
+    const dist = ai.x - player.x;
+    ai.facingRight = dist < 0;
+    if (Math.abs(dist) > ATK_RANGE * 0.7) ai.x += dist > 0 ? -SPD * 0.85 : SPD * 0.85;
+    if (Math.abs(dist) < ATK_RANGE && now - ai.attackTimer > ATK_CD + 200) tryAttack(ai, player, now);
+  }
+
+  function drawHPBar(c, lx, bx) {
+    const bw = Math.min(160, W*0.2), bh = 18;
+    ctx.fillStyle = '#333'; ctx.fillRect(bx, 18, bw, bh);
+    const pct = c.hp / c.maxHp;
+    ctx.fillStyle = pct > 0.5 ? '#4caf50' : pct > 0.25 ? '#ff9800' : '#f44336';
+    ctx.fillRect(bx, 18, bw*pct, bh);
+    ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.5; ctx.strokeRect(bx, 18, bw, bh);
+    ctx.fillStyle = '#fff'; ctx.font = `bold ${Math.max(11,W*0.016)}px sans-serif`;
+    ctx.fillText(`${c.isPlayer?'🐤 你':'🐤 AI'}  ${c.hp}HP`, lx, 14);
+  }
+
+  function drawChicken(c) {
+    ctx.save();
+    if (c.hurtTimer > 0) ctx.filter = 'hue-rotate(160deg) saturate(3)';
+    let lunge = 0;
+    if (c.isAttacking)
+      lunge = (c.attackFrame < 6 ? c.attackFrame*4 : (12-c.attackFrame)*4) * (c.facingRight ? 1 : -1);
+    const dx = c.x + lunge;
+    // 原圖朝左（嘴在左邊），facingRight 時翻轉
+    if (c.facingRight) {
+      ctx.translate(dx + c.w, c.y - c.h); ctx.scale(-1, 1);
+      ctx.drawImage(chickenImg, 0, 0, c.w, c.h);
+    } else {
+      ctx.drawImage(chickenImg, dx, c.y - c.h, c.w, c.h);
+    }
+    ctx.restore();
+    if (c.dead) {
+      ctx.save(); ctx.font = `${c.w*0.5}px sans-serif`; ctx.textAlign = 'center';
+      ctx.fillText('💀', dx + c.w/2, c.y - c.h/2 + 10); ctx.restore();
+    }
+  }
+
+  function loop(ts) {
+    if (!gameOver) {
+      if (fightKeys['a'] || fightKeys['ArrowLeft'])  player.x -= SPD;
+      if (fightKeys['d'] || fightKeys['ArrowRight']) player.x += SPD;
+      player.x = Math.max(0, Math.min(W - player.w, player.x));
+      player.facingRight = ai.x > player.x;
+      if (fightKeys['j'] || fightKeys[' ']) tryAttack(player, ai, ts);
+      if (!ai.dead) updateAI(ts);
+      [player, ai].forEach(c => {
+        if (c.isAttacking && ++c.attackFrame >= 12) { c.isAttacking = false; c.attackFrame = 0; }
+        if (c.hurtTimer > 0) c.hurtTimer--;
       });
+      if (ai.dead)     { gameOver = true; winner = 'player'; }
+      if (player.dead) { gameOver = true; winner = 'ai'; }
+    }
 
-      colorInput.addEventListener('input', updateColor);
-      sizeInput.addEventListener('input', updateSize);
-      canvas.addEventListener(moveEvent, draw);
-      canvas.addEventListener(upEvent, () => isDrawing = false);
-      canvas.addEventListener('mouseout', hideCursor);
-      eraser.addEventListener('click', eraserEvent);
+    ctx.clearRect(0, 0, W, H);
+    const sky = ctx.createLinearGradient(0, 0, 0, GROUND);
+    sky.addColorStop(0,'#87ceeb'); sky.addColorStop(1,'#e0f4ff');
+    ctx.fillStyle = sky; ctx.fillRect(0,0,W,GROUND);
+    ctx.fillStyle = '#5aad3f'; ctx.fillRect(0,GROUND,W,H-GROUND);
+    ctx.fillStyle = '#3d8c28'; ctx.fillRect(0,GROUND,W,6);
+
+    drawChicken(player); drawChicken(ai);
+    const bw = Math.min(160, W*0.2);
+    drawHPBar(player, 14, 14);
+    drawHPBar(ai, W-bw-14, W-bw-14);
+
+    ctx.fillStyle='rgba(0,0,0,0.35)'; ctx.font='bold 20px sans-serif';
+    ctx.textAlign='center'; ctx.fillText('VS', W/2, 32); ctx.textAlign='left';
+
+    [player, ai].forEach(c => {
+      if (c.isAttacking && c.attackFrame < 8) {
+        const ex = c.facingRight ? c.x+c.w+5 : c.x-20;
+        ctx.font='28px sans-serif'; ctx.textAlign='center';
+        ctx.fillText('💥', ex, c.y-c.h/2); ctx.textAlign='left';
+      }
     });
-  </script>
-  <style>
-    canvas {
-      border: 1px solid black;
-      cursor: none;
+
+    if (gameOver) {
+      ctx.fillStyle='rgba(0,0,0,0.55)'; ctx.fillRect(0,0,W,H);
+      ctx.fillStyle='#fff'; ctx.font=`bold ${W*0.055}px sans-serif`;
+      ctx.textAlign='center';
+      ctx.fillText(winner==='player'?'🎉 你贏了！':'💀 AI 勝利！', W/2, H/2-10);
+      ctx.font=`${W*0.038}px sans-serif`;
+      ctx.fillText(winner==='player'?'小雞稱霸！':'再接再厲吧～', W/2, H/2+34);
+      ctx.textAlign='left';
+      document.getElementById('fight-restart').style.display = 'inline-block';
+    }
+    _raf = requestAnimationFrame(loop);
+  }
+
+  document.getElementById('fight-restart').onclick = reset;
+  if (chickenImg.complete) reset(); else chickenImg.onload = reset;
+}
+
+/* ═══════════════════════════════════════════
+   🐔 打地鼠
+═══════════════════════════════════════════ */
+function initWhack() {
+  const canvas = document.getElementById('whack-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width  = Math.min(540, canvas.parentElement.clientWidth);
+  canvas.height = Math.round(canvas.width * 0.75);
+  const W = canvas.width, H = canvas.height;
+  const CW = Math.round(W * 0.135), CH = CW;
+  const HRX = W * 0.09, HRY = W * 0.037;
+  const RISE = 340, FALL = 270, WHACK = 110;
+
+  const holes = [];
+  for (let row = 0; row < 3; row++)
+    for (let col = 0; col < 3; col++)
+      holes.push({ x: W*(0.19+col*0.31), y: H*(0.28+row*0.305),
+                   visible:0, state:'hidden', progress:0,
+                   waitTimer: 500 + (row*3+col)*180 + Math.random()*900,
+                   whackTimer: 0 });
+
+  let score, timeLeft, gameOver, lastTS;
+
+  function resetWhack() {
+    score=0; timeLeft=30; gameOver=false; lastTS=null;
+    holes.forEach((h,i) => {
+      h.visible=0; h.state='hidden'; h.progress=0;
+      h.waitTimer=600+i*150+Math.random()*900; h.whackTimer=0;
+    });
+    document.getElementById('whack-restart').style.display='none';
+    if (_raf) cancelAnimationFrame(_raf);
+    _raf = requestAnimationFrame(whackLoop);
+  }
+
+  function updateHole(h, dt) {
+    const spd = timeLeft>20 ? 1 : timeLeft>10 ? 1.4 : 1.85;
+    if (h.whackTimer>0) h.whackTimer -= dt;
+    switch(h.state) {
+      case 'hidden':
+        if (!gameOver) { h.waitTimer-=dt; if(h.waitTimer<=0){h.state='rising';h.progress=0;} }
+        break;
+      case 'rising':
+        h.progress += dt/(RISE/spd);
+        if(h.progress>=1){h.progress=1;h.state='visible';h.waitTimer=(600+Math.random()*600)/spd;}
+        h.visible = easeInOut(h.progress);
+        break;
+      case 'visible':
+        h.waitTimer-=dt;
+        if(h.waitTimer<=0){h.state='falling';h.progress=1;}
+        break;
+      case 'falling':
+        h.progress -= dt/(FALL/spd);
+        if(h.progress<=0){h.progress=0;h.state='hidden';h.waitTimer=(500+Math.random()*1000)/spd;}
+        h.visible = easeInOut(h.progress);
+        break;
+      case 'whacked':
+        h.progress -= dt/WHACK;
+        if(h.progress<=0){h.progress=0;h.state='hidden';h.waitTimer=(300+Math.random()*700)/spd;}
+        h.visible = h.progress;
+        break;
+    }
+  }
+
+  function drawHole(h) {
+    ctx.fillStyle='#3d2000';
+    ctx.beginPath(); ctx.ellipse(h.x,h.y,HRX,HRY,0,0,Math.PI*2); ctx.fill();
+
+    ctx.save();
+    ctx.beginPath(); ctx.rect(h.x-CW*0.65, 0, CW*1.3, h.y); ctx.clip();
+    const chTop = h.y - CH*h.visible; // chTop = 雞的左上角 y（visible=0 時在洞中心以下，被 clip 擋住）
+    ctx.drawImage(chickenImg, h.x-CW/2, chTop, CW, CH);
+    if (h.whackTimer > 200) {
+      ctx.font=`${CW*0.55}px sans-serif`; ctx.textAlign='center';
+      ctx.fillText('⭐', h.x, chTop - CW*0.15); ctx.textAlign='left';
+    }
+    ctx.restore();
+
+    // 洞口邊緣蓋在小雞腳上
+    ctx.fillStyle='#7a5230';
+    ctx.beginPath(); ctx.ellipse(h.x,h.y-HRY*0.25,HRX,HRY*0.82,0,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle='#a07040';
+    ctx.beginPath(); ctx.ellipse(h.x,h.y-HRY*0.6,HRX*0.8,HRY*0.42,0,Math.PI,0); ctx.fill();
+  }
+
+  function whackLoop(ts) {
+    const dt = lastTS ? ts-lastTS : 16; lastTS=ts;
+    if (!gameOver) {
+      timeLeft -= dt/1000;
+      if (timeLeft<=0){timeLeft=0;gameOver=true;}
+      holes.forEach(h=>updateHole(h,dt));
+    }
+    const bg = ctx.createLinearGradient(0,0,0,H);
+    bg.addColorStop(0,'#a8dc80'); bg.addColorStop(1,'#5a9e3a');
+    ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+    holes.forEach(drawHole);
+
+    ctx.fillStyle='rgba(0,0,0,0.55)'; ctx.fillRect(0,0,W,42);
+    ctx.fillStyle='#fff'; ctx.font=`bold ${W*0.034}px sans-serif`;
+    ctx.textAlign='left'; ctx.fillText(`分數：${score}`, 12, 28);
+    ctx.textAlign='right'; ctx.fillText(`⏱ ${Math.ceil(timeLeft)}s`, W-12, 28); ctx.textAlign='left';
+
+    if (gameOver) {
+      ctx.fillStyle='rgba(0,0,0,0.6)'; ctx.fillRect(0,0,W,H);
+      ctx.fillStyle='#fff'; ctx.font=`bold ${W*0.078}px sans-serif`;
+      ctx.textAlign='center'; ctx.fillText('時間到！', W/2, H/2-28);
+      ctx.font=`${W*0.055}px sans-serif`;
+      ctx.fillText(`最終分數：${score} 分 🐔`, W/2, H/2+24); ctx.textAlign='left';
+      document.getElementById('whack-restart').style.display='inline-block';
+    }
+    _raf = requestAnimationFrame(whackLoop);
+  }
+
+  function handleWhack(ex, ey) {
+    if (gameOver) return;
+    holes.forEach(h => {
+      if (h.state!=='rising' && h.state!=='visible') return;
+      const chTop = h.y - CH*h.visible;
+      if (Math.abs(ex-h.x) < CW*0.62 && ey>chTop && ey<h.y) {
+        score++; h.state='whacked'; h.progress=h.visible; h.whackTimer=480;
+      }
+    });
+  }
+
+  function canvasXY(e) {
+    const r = canvas.getBoundingClientRect();
+    const src = e.touches ? e.touches[0] : e;
+    return { x:(src.clientX-r.left)*(W/r.width), y:(src.clientY-r.top)*(canvas.height/r.height) };
+  }
+  canvas.addEventListener('click', e => { const p=canvasXY(e); handleWhack(p.x,p.y); });
+  canvas.addEventListener('touchstart', e => { e.preventDefault(); const p=canvasXY(e); handleWhack(p.x,p.y); }, {passive:false});
+
+  document.getElementById('whack-restart').onclick = resetWhack;
+  if (chickenImg.complete) resetWhack(); else chickenImg.onload = resetWhack;
+}
+
+/* ═══════════════════════════════════════════
+   🥚 接雞蛋
+═══════════════════════════════════════════ */
+function initCatch() {
+  const canvas = document.getElementById('catch-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width  = Math.min(400, canvas.parentElement.clientWidth);
+  canvas.height = Math.round(canvas.width * 1.35);
+  const W = canvas.width, H = canvas.height;
+  const BW=W*0.22, BH=W*0.09, BY=H-BH-22, BSPD=W*0.013;
+
+  let basket, eggs, tc, score, lives, gameOver, lastTS;
+
+  function resetCatch() {
+    basket = { x: W/2-BW/2 };
+    eggs = [];
+    tc = { x:20, y:H*0.07, dir:1, dropTimer:1500 };
+    score=0; lives=5; gameOver=false; lastTS=null;
+    document.getElementById('catch-restart').style.display='none';
+    if (_raf) cancelAnimationFrame(_raf);
+    _raf = requestAnimationFrame(catchLoop);
+  }
+
+  function catchLoop(ts) {
+    const dt = lastTS ? ts-lastTS : 16; lastTS=ts;
+
+    if (!gameOver) {
+      tc.x += tc.dir * W*0.003 * (1+score*0.006);
+      if(tc.x>W-65){tc.x=W-65;tc.dir=-1;}
+      if(tc.x<5){tc.x=5;tc.dir=1;}
+      tc.dropTimer-=dt;
+      if(tc.dropTimer<=0){
+        const interval=Math.max(550,1500-score*14);
+        tc.dropTimer=interval*(0.7+Math.random()*0.6);
+        eggs.push({x:tc.x+30, y:H*0.19, spd:2.8+score*0.045+Math.random()});
+      }
+
+      if(catchKeys['a']||catchKeys['ArrowLeft'])  basket.x-=BSPD;
+      if(catchKeys['d']||catchKeys['ArrowRight']) basket.x+=BSPD;
+      basket.x = Math.max(0,Math.min(W-BW,basket.x));
+
+      eggs = eggs.filter(egg => {
+        egg.y+=egg.spd;
+        if(egg.x>basket.x && egg.x<basket.x+BW && egg.y+14>BY && egg.y<BY+BH){
+          score++; return false;
+        }
+        if(egg.y>H+20){
+          lives--; if(lives<=0){lives=0;gameOver=true;} return false;
+        }
+        return true;
+      });
     }
 
-    #cursor-img {
-      width: 100px;
-      height: 100px;
-      display: none;
-      position: fixed;
-      background-image: url(/images/favicon.ico);
-      background-size: 50%;
-      background-repeat: no-repeat;
-      cursor: none;
-      pointer-events: none;
+    // 背景
+    ctx.fillStyle='#87ceeb'; ctx.fillRect(0,0,W,H*0.58);
+    ctx.fillStyle='#c8e6c9'; ctx.fillRect(0,H*0.58,W,H*0.42);
+    ctx.fillStyle='#5aad3f'; ctx.fillRect(0,H-28,W,28);
+
+    // 上方走動的小雞（dir>0 朝右翻轉，dir<0 朝左原圖）
+    ctx.save();
+    if (tc.dir > 0) {
+      ctx.translate(tc.x+60, tc.y); ctx.scale(-1,1);
+      ctx.drawImage(chickenImg, 0, 0, 60, 60);
+    } else {
+      ctx.drawImage(chickenImg, tc.x, tc.y, 60, 60);
     }
-  </style>
+    ctx.restore();
+
+    // 雞蛋
+    eggs.forEach(egg => {
+      const g = ctx.createRadialGradient(egg.x-3,egg.y-4,2,egg.x,egg.y,12);
+      g.addColorStop(0,'#fffde7'); g.addColorStop(1,'#ffd54f');
+      ctx.fillStyle=g;
+      ctx.beginPath(); ctx.ellipse(egg.x,egg.y,10,14,0,0,Math.PI*2); ctx.fill();
+      ctx.strokeStyle='#f9a825'; ctx.lineWidth=1; ctx.stroke();
+    });
+
+    // 籃子
+    const bx=basket.x, by=BY;
+    ctx.fillStyle='#8d6e2a';
+    ctx.beginPath();
+    ctx.moveTo(bx+6,by); ctx.lineTo(bx+BW-6,by);
+    ctx.lineTo(bx+BW,by+BH); ctx.lineTo(bx,by+BH);
+    ctx.closePath(); ctx.fill();
+    ctx.strokeStyle='#5d4e1e'; ctx.lineWidth=2; ctx.stroke();
+    ctx.fillStyle='#a67c32';
+    ctx.fillRect(bx-4,by-6,BW+8,10); ctx.strokeRect(bx-4,by-6,BW+8,10);
+
+    // HUD
+    ctx.fillStyle='rgba(0,0,0,0.5)'; ctx.fillRect(0,0,W,38);
+    ctx.fillStyle='#fff'; ctx.font=`bold ${W*0.043}px sans-serif`;
+    ctx.textAlign='left'; ctx.fillText(`🥚 ${score}`, 10, 26);
+    ctx.textAlign='right';
+    ctx.fillText('❤️'.repeat(lives), W-10, 26); ctx.textAlign='left';
+
+    if (gameOver) {
+      ctx.fillStyle='rgba(0,0,0,0.6)'; ctx.fillRect(0,0,W,H);
+      ctx.fillStyle='#fff'; ctx.font=`bold ${W*0.088}px sans-serif`;
+      ctx.textAlign='center'; ctx.fillText('遊戲結束！', W/2, H/2-28);
+      ctx.font=`${W*0.058}px sans-serif`;
+      ctx.fillText(`接到 ${score} 顆蛋 🥚`, W/2, H/2+24); ctx.textAlign='left';
+      document.getElementById('catch-restart').style.display='inline-block';
+    }
+    _raf = requestAnimationFrame(catchLoop);
+  }
+
+  document.getElementById('catch-restart').onclick = resetCatch;
+  if (chickenImg.complete) resetCatch(); else chickenImg.onload = resetCatch;
+}
+</script>
+
+<style>
+/* ── 整體容器：桌機置中 ── */
+#game-switcher,
+#game-paint,
+#game-fight,
+#game-whack,
+#game-catch {
+  max-width: 840px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#game-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+.game-tab {
+  padding: 7px 16px;
+  border: 2px solid #ffc600;
+  border-radius: 20px;
+  background: transparent;
+  color: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  touch-action: manipulation;
+}
+.game-tab:hover { background: #ffc60033; }
+.game-tab.active { background: #ffc600; color: #333; font-weight: bold; }
+
+/* ── Canvas 共用：置中、滿版 ── */
+canvas {
+  display: block;
+  max-width: 100%;
+  margin: 8px auto 0;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+}
+canvas#draw { border-color: #000; cursor: none; }
+
+/* ── 小畫家工具列 ── */
+.paint-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin: 12px 0 4px;
+}
+.paint-toolbar label {
+  white-space: nowrap;
+  font-size: 14px;
+}
+.paint-toolbar input[type="range"] {
+  flex: 1 1 100px;
+  max-width: 160px;
+  min-width: 60px;
+}
+.paint-toolbar button {
+  padding: 5px 14px;
+  border: 1.5px solid #aaa;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.paint-toolbar button:active { background: #ffc60033; }
+
+/* ── 觸控方向按鈕 ── */
+.touch-controls {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 12px;
+}
+.touch-btn {
+  padding: 14px 28px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #ffc600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  min-width: 64px;
+}
+.touch-btn:active { background: #e6b000; transform: scale(0.93); }
+.atk-btn { background: #ff6b35; color: #fff; padding: 14px 20px; }
+.atk-btn:active { background: #e85a26; }
+
+/* ── 再來一局按鈕 ── */
+.restart-btn {
+  padding: 9px 28px;
+  font-size: 15px;
+  background: #ffc600;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  touch-action: manipulation;
+}
+
+/* ── 遊戲說明段落 ── */
+#game-fight p, #game-whack p, #game-catch p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* ── 再來一局置中容器 ── */
+.restart-wrap {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#cursor-img {
+  width: 100px; height: 100px;
+  display: none; position: fixed;
+  background-image: url(/images/favicon.ico);
+  background-size: 50%; background-repeat: no-repeat;
+  cursor: none; pointer-events: none; z-index: 9999;
+}
+kbd {
+  background: #eee; border: 1px solid #999;
+  border-radius: 3px; padding: 1px 5px;
+  font-size: 12px; color: #333;
+}
+
+/* ── 手機微調 ── */
+@media (max-width: 480px) {
+  .game-tab { font-size: 13px; padding: 6px 12px; }
+  .touch-btn { padding: 16px 24px; font-size: 22px; }
+  .atk-btn { padding: 16px 16px; }
+}
+</style>
 
   </div>
 </article>
@@ -253,7 +826,7 @@ fjs.parentNode.insertBefore(js, fjs);
     
     <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2025 Cindy Liu <a href='/Privacy-Policy'>Privacy Policy</a>
+    Copyright &copy; 2026 Cindy Liu <a href='/Privacy-Policy'>Privacy Policy</a>
   </div>
   <div class="footer-left">
     . Some links are affiliated
